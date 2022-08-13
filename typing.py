@@ -3,6 +3,7 @@
 import curses
 from curses import wrapper
 import time
+import random
 
 def startup(stdscr):
     stdscr.clear()
