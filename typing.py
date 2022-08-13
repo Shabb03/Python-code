@@ -13,7 +13,7 @@ def startup(stdscr):
     stdscr.getkey()
 
 def display(stdscr, target, current, wpm=0):
-    stdscr.addstr(sample)
+    stdscr.addstr(target)
     stdscr.addstr(1, 0, f'WPM: {wpm}')
 
     for i, char in enumerate(current):
@@ -40,7 +40,7 @@ def test(stdscr):
         wpm = round((len(current) / (time_elapsed / 60)) / 5)
 
         stdscr.clear()
-        display(stdscr, sample, current)
+        display(stdscr, sample, current, wpm)
         stdscr.refresh()
 
         if "".join(current) == sample:
@@ -70,7 +70,7 @@ def main(stdscr):
         test(stdscr)
 
         stdscr.addstr(2, 0, "You have completed the test! Press any key to continue . . .")
-        stdscr.getkey()
+        key = stdscr.getkey()
         if ord(key) == 27:
             break
 
