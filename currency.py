@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
 
-#REFERENCE: https://www.youtube.com/watch?v=txKBWtvV99Y&list=PLRwV8PM4b0OAOn-ayvzv4lNcbQyhovnFI&index=7&t=165s
-
 from requests import get
 from pprint import PrettyPrinter
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 BASE_URL = "https://free.currconv.com/"
-API_KEY = "4b5990cbe8cd0cc07067"
+API_KEY = os.getenv("API_KEY")
 
 printer = PrettyPrinter()
 
